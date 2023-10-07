@@ -19,13 +19,13 @@ DRF API allowing to upload Images based on three built-in tiers, backed with Pos
 Note: As for now project doesn't use Docker therefore it's needed to install external technologies like PostgreSQL, Redis server and Python.
 
 After installing external tech and setting up database you can follow this steps in python terminal:
-  1 pip install -r requirements.txt
-  2 python manage.py loaddata fixtures/fixtures.json  
-  3 python manage.py createsuperuser
-  4 python manage.py makemigrations
-  5 python manage.py migrate
-  6 python manage.py runserver and celery -A api worker -l info in two seprate python terminals
-  7 Additionally: python manage.py test
+  1. pip install -r requirements.txt
+  2. python manage.py loaddata fixtures/fixtures.json  
+  3. python manage.py createsuperuser
+  4. python manage.py makemigrations
+  5. python manage.py migrate
+  6. python manage.py runserver and celery -A api worker -l info in two seprate python terminals
+  7. Additionally: python manage.py test
 
 After that you should be able to work with API through http://127.0.0.1:8000/ url and log in as admin through http://127.0.0.1:8000/admin/login/?next=/admin/
 
