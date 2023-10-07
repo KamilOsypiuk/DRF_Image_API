@@ -1,0 +1,32 @@
+[
+    {
+        "model": "image_api.accounttier",
+        "pk": 1,
+        "fields": {
+            "tier": "Basic",
+            "thumbnail_sizes": "200",
+            "original_link": false,
+            "expiration_link": false
+        }
+    },
+    {
+        "model": "image_api.accounttier",
+        "pk": 2,
+        "fields": {
+            "tier": "Premium",
+            "thumbnail_sizes": "200, 400",
+            "original_link": true,
+            "expiration_link": false
+        }
+    },
+    {
+        "model": "image_api.accounttier",
+        "pk": 3,
+        "fields": {
+            "tier": "Enterprise",
+            "thumbnail_sizes": "200, 400",
+            "original_link": true,
+            "expiration_link": true
+        }
+    }
+]
