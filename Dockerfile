@@ -5,17 +5,17 @@ WORKDIR /api/
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
-RUN apk update && apk add --no-cache libmagic && \
-    apk update && apk add git
-
 COPY requirements.txt .
 
-RUN apk add --no-cache postgresql-libs && \
+RUN apk update && apk add --no-cache libmagic && \
+    apk update && apk add git && \
+    apk update && apk add --no-cache make && \
+    apk add --no-cache postgresql-libs && \
     apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev && \
     pip install --no-cache-dir -r requirements.txt && \
     apk --purge del .build-deps
 
-COPY ./config/.env.template ./config/.env
+COPY .env.template .env
 
 COPY . .
 
