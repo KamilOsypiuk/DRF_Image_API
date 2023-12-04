@@ -16,18 +16,27 @@ DRF API allowing to upload Images based on three built-in tiers, backed with Pos
 - User based on their tiers can perform specific actions on Images
 
 # Project setup
-Note: As for now project doesn't use Docker therefore it's needed to install external technologies like PostgreSQL, Redis server and Python.
+## Setup
 
-After installing external tech and setting up database you can follow this steps in python terminal:
-  1. pip install -r requirements.txt
-  2. python manage.py loaddata fixtures/fixtures.json  
-  3. python manage.py createsuperuser
-  4. python manage.py makemigrations
-  5. python manage.py migrate
-  6. python manage.py runserver and celery -A api worker -l info in two seprate python terminals
-  7. Additionally: python manage.py test
+Note: Command make build should create .env file in root directory but in case if this file is not created, create .env file manually, copy .env.template to it and set your own variables.
 
-After that you should be able to work with API through http://127.0.0.1:8000/ url and log in as admin through http://127.0.0.1:8000/admin/login/?next=/admin/
+1. Clone repository: `$ git clone https://github.com/KamilOsypiuk/DRF_Image_API/`
+2. Run in root directory: `$ make build`
+3. Run project: `$ make up`
+
+## Fixtures
+`$ make fixtures`
+
+## Migrations
+`$ make migrations`
+
+## Tests
+`$ make test`
+
+## Create admin
+`$ make superuser`
+
+After that you should be able to work with browsable API through http://127.0.0.1:8000/ url and log in as admin through http://127.0.0.1:8000/admin/login/?next=/admin/
 
 
 
